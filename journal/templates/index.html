@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Forex Journal.">
+    <meta name="keywords" content="Forex, Forex Journal, Learn Forex">
+    <!-- Optional: You can also include different sizes for different devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'milligram.css' %}"> 
+    <link rel="stylesheet" href=" {% static 'style.css' %}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8893178371656933"
+     crossorigin="anonymous"></script>
+    <title>TRADING JOURNAL</title>
+</head>
+<body id="bodytap">
+ 
+    <section class="navbar">
+        <nav class="navlist">
+            <img src="{% static 'img/20230312_165351.png' %}" alt="logo" class="logopng"> 
+
+            <!-- <i class="fa-solid fa-bars navpress"></i> -->
+
+            <div  class="navitems active">
+                {% if user.is_authenticated %}
+                <a href=" {% url 'dashboard' %}" class="navobjects">Dashboard</a>
+                <a href=" {% url 'learnforex' %}" class="navobjects">Learn Forex</a>
+                <a href=" {% url 'signout' %}" class="navobjects">Logout</a>
+                {% else %}
+                <a href="{% url 'userlogin' %}" class="navobjects">login</a> 
+                <a href="{% url 'signup' %}" class="navobjects">sign up</a> 
+                 <a href=" {% url 'learnforex' %}" class="navobjects">Learn Forex</a>
+                {% endif %}
+            </div>
+        </nav>
+    </section>
+
+    <section class="hero">
+        <div class="hero_card">
+            <h1 class="heroquote">journal and track your forex trades</h1>
+            <p class="herograph">ultimately enchancing decision making and profitability</p>
+        </div>
+        <div class="getstarted">
+            {% if user.is_authenticated %}
+            <a href="{% url 'dashboard' %}" class="heroproceed">get started</a> 
+            {% else %}
+            <a href="{% url 'signup' %}" class="heroproceed">get started</a> 
+            {% endif %}
+        </div>
+        <div class="heropic">
+           <div class="container">
+            <div class="card">
+                <img src="{% static 'img/pexels-anna-nekrashevich-6801648.jpg' %}" alt=""> 
+            </div>
+           </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2 class="heading">NOTE EXPERIENCE</h2>
+        <p class="experience">Jotting down experiences and insights ensures that valuable lessons are not forgotten.</p>
+        <div class="container">
+            <img src="{% static 'img/sticker-mule-B6-8HwbRJz4-unsplash.jpg' %}" alt=""> 
+            <div class="card-details">
+                <ol class="actions">
+                    <li>Enhance Discipline & Focus: Develop a structured approach and stay focused on your trading plan.</li>
+                    <li>Track Progress & Performance: Monitor your performance and set realistic goals to measure your success.</li>
+                    <li>Emotional Management: Recognize emotional triggers and build confidence through regular reflection.</li>
+                    <li>Knowledge Retention: Capture valuable insights and create a personalized reference for future trades.</li>
+                    <li>Improve Strategy Development: Refine your techniques and adapt to market changes with a critical eye.</li>
+                    <li>Accountability: Maintain self-discipline and seek feedback for continuous improvement.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <div class="loader_bg">
+        <div class="loader"><img src="{% static 'img/Pulse@1x-1.0s-200px-200px.gif' %}" alt="#" /></div> 
+     </div>
+
+    <section class="footer">
+        <div class="container" >
+            <div class="footerholers" style="border-top: 1px solid white;">
+                    <img src="{% static 'img/20230312_165351.png' %}" alt="logo" class="logopng"> 
+                 <div class="copyright">
+                     <p style="color: White;">&copy;copyright @ Trust Margin ltd 2024</p>
+                 </div>
+                 <div class="owner">
+                     <p style="color: white;">Created by @Devdynasty</p>
+                 </div>
+                 <div class="owner " style="display: flex;">
+                     <p style="color: White;">Contact </p>
+                     <a href="" style="margin-left: 2rem;color: green; font-size: larger;"><i class="fa-brands fa-whatsapp"></i></a>
+                     <a href="" style="margin-left: 2rem;color: red;"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="" style="margin-left: 2rem;color: rgb(189, 189, 240);"><i class="fa-brands fa-telegram"></i></a>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

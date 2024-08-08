@@ -1,0 +1,732 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --secpad: 0rem 2rem;
+    --button: #ffd700;
+    --button_textcolor:#333333;
+    --card:#008080;
+    --topspace: 2rem;
+    --card_textcolor:#E0E0E0;
+    --backdrop:rgba(255, 255, 255, 0.4);
+}
+
+body{
+    /* background: url(/img/calender.jpg); */
+    background:rgb(74, 74, 74) ;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* object-fit: cover; */
+    /* background-attachment: fixed; */
+    /* background-position:center ; */
+    font-family: 'Roboto Slab', serif;
+    /* width: 100vw; */
+    height: 100vh;
+}
+
+.footerholers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.entry_but{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rem;
+    flex-direction: column;
+}
+
+#textHelp{
+    text-transform: capitalize;
+    color: yellow;
+}
+
+.countescript{
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: start;
+}
+
+.navitems{
+    margin-top: 2rem;
+}
+
+.counting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count_card{
+    background: yellow;
+    width: 15rem;
+    height: 10rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: black;
+    margin-top: 2rem;
+}
+
+.countnum {
+    font-size: 2rem;
+}
+
+.welcomeuser{
+    font-size: 1.5rem;
+    color: White;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    border: 2px solid rgba(151, 96, 124, 0.8);
+    width: 24rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    z-index: 1;
+    color: black;
+}
+
+.blurred {
+    filter: blur(5px);
+}
+
+.closeButton {
+    border: 3px solid red;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: red;
+}
+
+/* .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    z-index: 1;
+    color: black;
+}
+
+.blurred {
+    filter: blur(5px);
+}
+
+#closeButton{
+    border: 3px solid red;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: red;
+} */
+
+input[type=text] {
+    color: white;
+    background: black;
+  }
+
+  input[type=date] {
+    color: white;
+  }
+
+
+  input[type=password] {
+    color: white;
+    background: black;
+  }
+
+input[type=email] {
+    color: white;
+    background: black;
+  }
+
+input[type=number] {
+    color: white;
+    background: black;
+  }
+select{
+    color: white;
+    background: black;
+}
+
+textarea{
+    color: white;
+    background: black;
+}
+
+  .forema{
+    color: white;
+  }
+
+.logopng{
+    width: 10rem;
+    object-fit: contain;
+}
+
+.loader_bg {
+    position: fixed;
+    z-index: 100;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 280px;
+}
+
+input{
+    color: inherit;
+}
+
+input::placeholder{
+    color:rgb(193, 191, 191);
+    text-transform: capitalize;
+    font-size: smaller;
+}
+
+textarea::placeholder{
+    color:rgb(193, 191, 191);
+    text-transform: capitalize;
+    font-size: smaller;
+}
+
+#ageRangeField{
+    color: #E0E0E0;
+    background-color: #333333;
+}
+
+.fa-user{
+    color: #ffd700;
+}
+
+/* input:focus{
+    border: 1px solid white;
+} */
+
+
+textarea{
+    resize: none;
+    height: 20rem;
+}
+
+textarea:focus{
+    color: white;
+    outline: white;
+    border: 1px solid greenyellow;
+}
+
+.navbar{
+    padding: var(--secpad);
+    width: 100%;
+}
+
+.navlist{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    flex-wrap: wrap;
+    z-index: 100;
+}
+
+.active{
+    margin-top: 2rem;
+    padding-top: 2rem;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    /* margin-left: 3rem;
+    margin-right: 3rem; */
+    backdrop-filter: blur(15px);
+    background:inherit;
+    z-index: 1;
+    /* border:1px solid var(--button); */
+}
+.drop{
+    list-style: none;
+    text-align: center;
+    border-bottom: none;
+}
+
+.drop li{
+    border-bottom: 1px solid white;
+}
+
+
+
+.fa-bars{
+    color: white;
+    font-size: 3rem; 
+    margin-top: 3rem;
+}
+
+
+
+.login{
+    color: var(--card_textcolor);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.navobjects{
+    /* margin-left: 2rem; */
+    /* background: var(--button); */
+    padding: 1rem ;
+    text-transform: capitalize;
+    color: var(--button_textcolor);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    color: var(--button);
+    cursor: pointer;
+    border: 1px solid yellow;
+    font-size: 1.3rem;
+}
+
+.holdnav{
+    margin-top: 2rem;
+}
+
+
+
+
+.navobjects:hover {
+    color: white;
+}
+
+.hero{
+    background:rgba(151, 96, 124, 0.8);
+}
+
+.heroquote{
+    text-transform: capitalize;
+    color: var(--card_textcolor);
+}
+
+.herograph{
+    color: var(--button);
+    text-transform: capitalize;
+    margin-top:var(--topspace);
+    margin-bottom: var(--topspace);
+    background:var(--backdrop) ;
+    backdrop-filter: blur(5px);
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.hero_card {
+    margin-top: var(--topspace);
+    text-align: center;
+    padding: var(--secpad);
+}
+
+.getstarted{
+    padding: 0 3rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.heroproceed{
+    background: var(--card);
+    color: var(--card_textcolor);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+}
+
+.card .img{
+    width: 100%;
+    height: 100%;
+}
+
+.heropic{
+    margin-top: 4rem;
+    background: var(--card_textcolor);
+    padding: 2rem 0;
+}
+
+.content{
+    background:url(/img/calender.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: var(--card_textcolor);
+    
+}
+
+.heading{
+    padding-top: 5rem;
+}
+
+.experience{
+    backdrop-filter: blur(5px);
+    background: var(--backdrop);
+    text-align: center;
+    margin: 0 3rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    color: var(--button);
+}
+
+.content img{
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.card-details{
+    background: var(--card_textcolor);
+    padding-left: 1rem;
+    padding-right: 2rem;
+    text-align: start;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #333333;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    position: relative;
+    top: -2rem;
+}
+
+.tablehold{
+    padding: 5rem 1rem;
+    background:url(/img/pexels-tonesmk1-3072709.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+    filter: brightness(100%);
+    margin-top: 2rem;
+   
+}
+
+table{
+    backdrop-filter: blur(15px);
+    background: var(--backdrop);
+    padding: var(--secpad);
+    color:rgb(255, 255, 255);
+}
+
+th{
+    text-align:center ;
+    text-transform: capitalize;
+}
+
+td{
+    border-bottom:1px solid #ffd700;
+    border-left: 2px solid white;
+    text-align: center;
+}
+
+
+.linkbt {
+    margin-top: 4rem;
+    margin-bottom: 5em;
+    transition: transform 3s ease-in;
+    display: none;
+}
+
+
+.linkbt a{
+    background: var(--card);
+    margin: 0 1rem;
+    padding: 1.6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 2rem;
+    color: var(--card_textcolor);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 3s ease;
+    box-shadow: 1px 1px 3px .1px yellow;
+
+}
+
+.linkbt:hover{
+    transform: translateY(1rem);
+    
+}
+
+.createj{
+    display: block;
+    margin-bottom: 1rem;
+    background: yellow;
+    color: black;
+    border-radius: 5px;
+    width: 15rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.createcolor{
+    color: black;
+}
+
+.asterik{
+    color: var(--button);
+}
+
+.tb_inst{
+    color: white;
+    text-transform: capitalize;
+}
+
+.footerrow{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.longsht{
+    color: white;
+    background: green;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.shtlong{
+    color: white;
+    background: red;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.j_entry{
+    padding: 5rem 3rem;
+}
+
+form{
+    padding: 5rem 3rem;
+    backdrop-filter: blur(5px);
+    background: var(--backdrop);
+}
+
+label{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+@media (min-width: 40.0rem){
+
+    .tablehold{
+        width: 100%;
+        overflow: scroll;
+
+    }
+
+    .footerholers{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .entry_but{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10rem;
+        flex-direction: row;
+    }
+
+    table{
+        backdrop-filter: blur(15px);
+        background: var(--backdrop);
+        padding: var(--secpad);
+        color:rgb(255, 255, 255);
+        overflow: scroll;
+    }
+
+    .navlist{
+        display: flex;
+        justify-content: space-between;
+        /* border:1px solid var(--button); */
+        margin-top: 1rem;
+        border-radius: 1rem;
+        flex-wrap: wrap;
+        flex-direction: row;
+       
+    }
+
+    .navitems{
+        backdrop-filter: blur(15px);
+        background:inherit;
+        display: block;
+        margin-top: 0rem;
+        padding-top: 0rem;
+        position: initial;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        backdrop-filter: blur(15px);
+        background:inherit;
+        z-index: 0;
+        margin-top: 2rem;
+        width: auto;
+    }
+
+    .drop{
+        list-style: none;
+        text-align: end;
+        display: block;
+        margin: 0;
+        margin-top: 10rem;
+    }
+    
+    .drop li{
+        display: inline-flex;
+        border-bottom: none;
+        margin: 0;
+        z-index: 100;
+    }
+    
+    
+    
+    
+    .fa-bars{
+        color: white;
+        font-size: large;   
+        display: none; 
+    }
+    
+    .fa-circle-xmark{
+        display: none;
+        font-size: large; 
+        color: white; 
+        display: none;  
+    }
+    
+    
+    .navobjects{
+        /* margin-left: 2rem; */
+        /* background: var(--button); */
+        text-transform: capitalize;
+        color: var(--button_textcolor);
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        color: var(--button);
+        cursor: pointer;
+        margin-top: 5rem;
+        margin-left: 2rem;
+        margin-right: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .j_entry{
+        padding: 15rem 15rem;
+        
+    }
+
+
+
+    .loginform{
+        width: 60%;
+        margin: auto;
+    }
+    
+    .linkbt {
+        margin-top: 4rem;
+        margin-bottom: 5em;
+        transition: transform 3s ease-in;
+        display: block;
+    }
+
+    .fa-book{
+        font-size: 10rem;
+        color: blue;
+    }
+    
+}
+
+
+
+@media (min-width:80.0rem){
+    .tablehold{
+        overflow: scroll;
+
+    }
+
+    table{
+        backdrop-filter: blur(15px);
+        background: var(--backdrop);
+        padding: var(--secpad);
+        color:rgb(255, 255, 255);
+    }
+
+    .tb_inst{
+       display: none;
+    }
+}
+    
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Forex Journal.">
+  <meta name="keywords" content="Forex, Forex Journal, Learn Forex">
+  <title>TRADING JOURNAL</title>
+     <!-- Optional: You can also include different sizes for different devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'milligram.css' %}"> 
+    <link rel="stylesheet" href=" {% static 'style.css' %}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8893178371656933"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="message">
+    {% if messages %}
+        {% for message in messages %}
+            <p class="message {{ message.tags }}" id="message" style="margin-left: 2rem; color: yellow; background: black; padding: 2rem; width: 20rem; position: absolute; top: 0; left: 0;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+    <section class="navbar">
+        <nav class="navlist">
+            <img src="{% static 'img/20230312_165351.png' %}" alt="logo" class="logopng"> 
+            <!-- <i class="fa-solid fa-bars navpress"></i>             -->
+             <div class="holdnav">
+               <a href="{% url 'userlogin' %}" class="navobjects">Sign In</a> 
+               <a href="{% url 'index' %}" class="navobjects">Home</a> 
+             </div>
+        </nav>
+    </section>
+ 
+    <section class="j_entry">
+        <hi class="login">SIGN UP <i class="fa-solid fa-arrow-right"></i></hi>
+        <form method="POST" action=" {% url 'signup' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+            <fieldset>
+              <label for="nameField">username</label>
+              <input type="text" placeholder="e.g scott@123" name="username" required>
+              <label for="nameField">FirstName</label>
+              <input type="text" placeholder="FirstName" name="first_name" required>
+              <label for="nameField">LastName</label>
+              <input type="text" placeholder="LastName" name="last_name" required>
+              <label for="nameField">Email</label>
+              <input type="email" placeholder="Email" name="email" required>
+              <label for="nameField">Password</label>
+              <input type="password" placeholder="password" name="password1" required>
+              <label for="nameField"> Confirm password</label>
+              <input type="password" placeholder=" Confirm Password" name="password2" required>
+            </fieldset>
+            <div class="mb-3" style="color: aliceblue;">
+                <div id="textHelp" class="form-text" style="color: bisque;">password must contain at least 8 characters.</div>
+                <div id="textHelp" class="form-text" style="color: bisque;">password can't be too similar to the users other personal information.</div>
+                <div id="textHelp" class="form-text" style="color: bisque;">password can't be a commonly used password.</div>
+                <div id="textHelp" class="form-text" style="color: bisque;">password can't be entirely numeric.</div>
+              </div>
+
+            <div class="send">
+                <button>SIGN UP</button>
+                
+            </div>
+          </form>
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8893178371656933"
+     crossorigin="anonymous"></script>
+</body>
+</html>

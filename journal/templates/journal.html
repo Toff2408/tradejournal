@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Forex Journal.">
+  <meta name="keywords" content="Forex, Forex Journal, Learn Forex">
+  <title>TRADING JOURNAL</title>
+     <!-- Optional: You can also include different sizes for different devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'milligram.css' %}"> 
+    <link rel="stylesheet" href=" {% static 'style.css' %}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8893178371656933"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <section class="navbar">
+        <nav class="navlist">
+            <img src="{% static 'img/20230312_165351.png' %}" alt="logo" class="logopng"> 
+    
+            <!-- <i class="fa-solid fa-bars navpress"></i>   -->
+            
+            <div class="navitems">
+              <a href="{% url 'dashboard' %}" class="navobjects">Dashboard</a>
+              <a href="#" class="navobjects">log out</a>
+          </div>
+        </nav>
+    </section>
+
+    <section class="j_entry">
+        <hi class="login">CREATE JOURNAL <i class="fa-solid fa-arrow-right"></i></hi>
+        <form method="POST" action="{% url 'journal' %}" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <fieldset>
+              <label for="nameField">pair</label>
+              <input type="text" placeholder="e.g EUR/USD" name="pair" required>
+              <label for="nameField">date</label>
+              <input type="date" placeholder="e.g Monday" name="date" required>
+              <label for="nameField">time(open)</label>
+              <input type="time" placeholder="e.g 1.30pm" name="time_open" required>
+              <label for="nameField">time(close)</label>
+              <input type="time" placeholder="e.g 2.00pm" id="nameField" name="time_close" required>
+              <label for="nameField">duration</label>
+              <input type="text" placeholder="30 mins" id="nameField" name="duration" required>
+              <label for="nameField">session</label>
+              <select id="ageRangeField" name="session" required>
+                <option value="Asian">Asian</option>
+                <option value="London">London</option>
+                <option value="Newyork">Newyork</option>
+              </select>
+              <label for="nameField">long/short</label>
+              <select id="ageRangeField" name="longorshort" required>
+                <option value="True">Long</option>
+                <option value="False">Short</option>
+              </select>
+              <label for="nameField">entry</label>
+              <input type="text" placeholder="e.g 2341.670" id="nameField" name="entry" required>
+              <label for="nameField">stop loss</label>
+              <input type="text" placeholder="e.g 2356.78" id="nameField" name="stop_loss" required>
+              <select id="ageRangeField" name="outcome" required>
+                <option value="">OUTCOME</option>
+                <option value="True">WON</option>
+                <option value="False">LOSS</option>
+              </select>
+              <label for="nameField">risk reward</label>
+              <input type="text" placeholder="3.1" id="nameField" name="rr" required>
+              <label for="nameField">Note</label>
+              <textarea name="note" id="" placeholder="Write down why you took this Trade."></textarea>
+            </fieldset>
+
+            <div class="send">
+                <button>SEND</button>
+            </div>
+          </form>
+    </section>
+</body>
+</html>
